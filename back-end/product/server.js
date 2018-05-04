@@ -1,6 +1,6 @@
 let express = require('express'),
     app = express(),
-    port = process.env.PORT || 4100,
+    port = process.env.PORT || 4001,
     mongoose = require('mongoose'),
     ProductModel = require('../product/models/product_model'),
     bodyParser = require('body-parser'),

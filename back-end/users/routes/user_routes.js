@@ -1,4 +1,8 @@
 module.exports = function (app) {
-    let listShop = require('../controllers/userController');
+	let userControl = require('../controllers/user_controller');
+
+	app.route('create_user')
+		.post(userControl.create_user);
+
 
 };
