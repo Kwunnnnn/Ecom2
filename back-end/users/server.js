@@ -3,8 +3,7 @@ var express = require('express'),
     port = process.env.PORT || 4000,
     mongoose = require('mongoose'),
     UserModel = require('./models/user_model'),
-    AdminModel = require('../admin/models/admin_model'),
-    ProductModel = require('../product/models/product_model'),
+    AdminModel = require('./models/admin_model'),
     bodyParser = require('body-parser'),
     cors = require('cors');
 
