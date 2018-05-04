@@ -5,19 +5,19 @@ module.exports = function (app) {
   		app.route('/products')
   			.get(productList.get_all_products);
 
-  		app.route('/product')
+  		app.route('/product/:product_id')
         	.get(productList.get_product);
 
-        app.route('/products_category')
+        app.route('/products_category/:category_number')
         	.get(productList.get_product_category);
 
         app.route('/clear_product')
         	.get(productList.clear_product);
 
-        app.route('/get_stock')
+        app.route('/get_stock/:product_id')
         	.get(productList.get_stock)
 
-        app.route('/check_stock')
+        app.route('/check_stock/:product_id')
         	.get(productList.check_stock)
 
         // Post method
