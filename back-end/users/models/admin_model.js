@@ -4,12 +4,12 @@ var Schema = mongoose.Schema;
 
 var adminSchema = new Schema({
 
-    password: {type: String, require:true},
-    firstname: {type: String, require: true},
-    lastname: {type: String, require: true},
-    email: {type: String, require: true},
-    peopleID: {type: String, require: true},
-    tel: {type: String, require: true}
+    password: {type: String, required:true},
+    firstname: {type: String, required: true},
+    lastname: {type: String, required: true},
+    email: {type: String, required: true,unique: true},
+    peopleID: {type: String, required: true},
+    tel: {type: String, required: true}
 
 
 });

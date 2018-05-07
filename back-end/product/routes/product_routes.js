@@ -3,31 +3,29 @@ module.exports = function (app) {
 
   		// Get method
   		app.route('/products')
-  			.get(productList.get_all_products);
+  			.get(productList.products);
 
-  		app.route('/product/:product_id')
-        	.get(productList.get_product);
+  		app.route('/product/:id')
+        	.get(productList.product);
 
-        app.route('/products_category/:category_number')
-        	.get(productList.get_product_category);
+        app.route('/product_category/:category')
+        	.get(productList.product_category);
 
         app.route('/clear_product')
-        	.get(productList.clear_product);
+        	.delete(productList.clear_product);
 
-        app.route('/get_stock/:product_id')
-        	.get(productList.get_stock)
+        app.route('/get_stock/:id')
+        	.get(productList.get_stock),
 
-        app.route('/check_stock/:product_id')
-        	.get(productList.check_stock)
 
         // Post method
         app.route('/add_product')
             .post(productList.add_product);
 
-        app.route('/delete_product')
-        	.post(productList.delete_product);
+        app.route('/delete_product/:id')
+        	.delete(productList.delete_product);
 
-        app.route('/edit_product')
+        app.route('/edit_product/:id')
         	.post(productList.edit_product);
 
         app.route('/decrease_stock')

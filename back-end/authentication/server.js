@@ -1,8 +1,7 @@
 var express = require('express'),
     app = express(),
-    port = process.env.PORT || 4400,
+    port = process.env.PORT || 4004,
     mongoose = require('mongoose'),
-    AuthenModel = require('./models/authen_model'),
     bodyParser = require('body-parser'),
     cors = require('cors');
 
