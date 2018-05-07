@@ -7,9 +7,8 @@ let userSchema = new Schema({
     password: {type: String, required: true},
     firstname: {type: String, required: true},
     lastname: {type: String, required: true},
-    gender: {type: Boolean, required: true},
-    dob: {type: String, required: true},
-    address_number: {type: String, required: true}
+    address_number: {type: String, required: true},
+    user_status: {type: Boolean, default: false}
 });
 
 module.exports = mongoose.model('User', userSchema);

@@ -4,15 +4,17 @@ let http = require('http');
 
 
 exports.check_password = function (req, res) {
+
     let md5 = crypto.createHash('md5');
-    http.get('http://localhost:4000/get_users/' + req.body.email, (resp) => {
-        let data = ' ';
+    http.get('http://localhost:4000/get_users/' + req.params.email, (resp) => {
+        let data = '';
         resp.on('data', (chunk) => {
             data += chunk;
         });
         resp.on('end', () => {
             console.log(data);
-            let pass = md5_encryption(req.body.password);
+            let req_password = String(req.body.password);
+            let pass = md5_encryption(req_password);
             if(pass === data.password){
                 return resp.status(200).send("Login successful");
             }

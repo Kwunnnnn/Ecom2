@@ -4,6 +4,6 @@ module.exports = function (app) {
     app.route('/create_user')
         .post(authenList.create_user);
 
-    app.route('/check_password')
+    app.route('/check_password/:email')
         .get(authenList.check_password);
 };

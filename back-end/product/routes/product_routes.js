@@ -34,4 +34,7 @@ module.exports = function (app) {
         app.route('/increase_stock')
         	.post(productList.increase_stock);
 
+        app.route('/get_all_product')
+			.get(productList.get_all_product);
+
 };

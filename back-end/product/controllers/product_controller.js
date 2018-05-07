@@ -142,3 +142,13 @@ exports.edit_product = function (req, res) {
     });
 };
 
+exports.get_all_product = function (req, res) {
+    Product.find({}, function (err, product) {
+        if(err) {
+            return res.status(500).send(err);
+        }
+        else {
+            return res.status(200).send(product);
+        }
+    });
+};
